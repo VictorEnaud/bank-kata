@@ -9,7 +9,18 @@ class AccountTest {
         Account account = new Account();
 
         // Then
-        String actual = account.generateStatement();
-        assertThat(actual).isEqualTo("date || credit || debit || balance");
+        assertThat(account.generateStatement()).isEqualTo("date || credit || debit || balance");
+    }
+
+    @Test
+    void shouldAddANewLineToStatement_onDeposit() {
+        // Given
+        Account account = new Account();
+
+        // When
+        account.deposit();
+
+        // Then
+        assertThat(account.generateStatement()).isEqualTo("date || credit || debit || balance\n || || || ");
     }
 }
