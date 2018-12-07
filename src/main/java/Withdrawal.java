@@ -1,4 +1,10 @@
-package PACKAGE_NAME;
+class Withdrawal extends Movement {
+    Withdrawal(double amount, String date) {
+        super(amount, date);
+    }
 
-public class Withdrawal {
+    @Override
+    double computeNewBalance(double currentBalance) {
+        return currentBalance - this.amount;
+    }
 }

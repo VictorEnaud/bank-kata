@@ -1,4 +1,10 @@
-package PACKAGE_NAME;
+abstract class Movement {
+    double amount;
+    String date;
 
-public interface Movement {
+    Movement(double amount, String date) {
+        this.amount = amount;
+    }
+
+    abstract double computeNewBalance (double currentBalance);
 }
