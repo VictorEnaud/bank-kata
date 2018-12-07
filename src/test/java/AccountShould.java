@@ -4,7 +4,9 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 class AccountTest {
     @Test
-    void firstTest() {
-        assertThat(true).isFalse();
+    void initially_should_have_balance_set_to_zero() {
+        
+
+        assertThat(account.balance).isEqualTo(0);
     }
 }
